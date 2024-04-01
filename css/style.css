@@ -1,0 +1,141 @@
+.body {
+    margin: 0;
+    height: 100vh;
+}
+
+.header {
+    height: 150px;
+    display: flex;
+    background-image: url(../img/Медаль.png);
+    background-size: 50px;
+    background-color: rgba(69, 155, 96, 0.5);
+    width: 100%;
+    background-position: center;
+}
+
+.centered-block {
+    margin: auto;
+}
+
+.header__text {
+    font-size: 36px;
+    text-decoration: none;
+    background-color: rgb(162, 205, 175);
+}
+
+
+.content__block {
+    background-color: rgb(162, 205, 175);
+    outline: #FFE082 solid 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.content__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.content__text {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.content__main {
+    display: flex;
+    height: 355px;
+    margin: 30px;
+    width: 100% - 60px;
+}
+
+.content__main-text {
+    display: inline-block;
+    height: 100%;
+    width: 75%;
+    overflow: auto;
+}
+
+.content__photo {
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+    background-image: url(../img/Фото.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+}
+
+.content__rest {
+    min-height: 200px;
+    margin: 30px;
+    width: 100% - 60px;
+    padding-top: 1px;
+}
+
+.content__link {
+    height: 35px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+
+
+
+
+
+
+.footer {
+    justify-content: center;
+    background-color: rgb(162, 205, 175);
+    bottom: 0px;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.contacts {
+    width: 500px;
+
+}
+
+.contacts__block {
+    margin: auto;
+}
+
+.contacts__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts__img {
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.contacts__link {
+    font-size: 18px;
+    color: black;
+}
+
+.vk {
+    background-image: url(../img/VK.svg);
+}
+
+.tg {
+    background-image: url(../img/Telegram.svg);
+}
+
+.email {
+    height: 17px;
+    background-image: url(../img/Email.png);
+}
+
