@@ -1,6 +1,5 @@
 .body {
     margin: 0;
-    height: 100vh;
 }
 
 .header {
@@ -58,14 +57,12 @@
 }
 
 .main-text {
-    display: inline-block;
     height: 100%;
     width: 75%;
     overflow: auto;
 }
 
 .photo {
-    display: inline-block;
     height: 100%;
     width: 25%;
     background-image: url(../img/Фото.jpg);
@@ -113,9 +110,6 @@
 .list {
     list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .contactsBlock__img {
