@@ -1,10 +1,10 @@
 .body {
     margin: 0;
     height: 100vh;
-    min-width: 700px;
 }
 
 .header {
+    max-height: 15vw;
     height: 150px;
     display: flex;
     background-image: url(../img/Медаль.png);
@@ -22,6 +22,10 @@
     font-size: 36px;
     text-decoration: none;
     background-color: rgb(162, 205, 175);
+}
+
+.content {
+    padding: 30px;
 }
 
 .contentBlock {
@@ -48,8 +52,9 @@
 .content__main {
     display: flex;
     height: 355px;
-    margin: 30px;
-    width: 100% - 60px;
+    margin: auto;
+    max-width: 1000px;
+    outline: black solid 2px;
 }
 
 .main-text {
@@ -71,18 +76,19 @@
 
 .content__rest {
     min-height: 150px;
-    margin: 30px;
-    width: 100% - 60px;
     padding-top: 1px;
     overflow: auto;
+    margin: 30px auto;
+    max-width: 1000px;
 }
 
 .content__link {
     height: 35px;
-    margin: 30px;
     display: flex;
     justify-content: center;
     font-size: 25px;
+    margin: auto;
+    max-width: 1000px;
 }
 
 .footer {
@@ -93,7 +99,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
 }
 
 .contacts {
