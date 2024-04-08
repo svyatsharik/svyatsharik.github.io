@@ -53,12 +53,10 @@
     height: 355px;
     margin: auto;
     max-width: 1000px;
-    outline: black solid 2px;
 }
 
 .main-text {
     width: 75%;
-    overflow: auto;
 }
 
 .photo {
@@ -67,6 +65,33 @@
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: 40px;
+}
+
+@media all and (max-width: 830px) {
+    .content__main {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 600px;
+        margin: auto;
+        max-width: 1000px;
+        height: fit-content;
+    }
+    
+    .main-text {
+        width: 95%;
+        min-height: 250px;
+    }
+    
+    .photo {
+        width: 100%;
+        height: 320px;
+        background-image: url(../img/Фото.jpg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto auto 30px auto;
+    }
 }
 
 .content__rest {
