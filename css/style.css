@@ -18,7 +18,7 @@
 }
 
 .header__text {
-    font-size: 36px;
+    font-size: 34px;
     text-decoration: none;
     background-color: rgb(162, 205, 175);
 }
@@ -57,14 +57,12 @@
 }
 
 .main-text {
-    height: 100%;
     width: 75%;
     overflow: auto;
 }
 
 .photo {
-    height: 100%;
-    width: 25%;
+    width: 45%;
     background-image: url(../img/Фото.jpg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -93,18 +91,21 @@
     background-color: rgb(162, 205, 175);
     bottom: 0px;
     height: 150px;
+    max-height: 40vw;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .contacts {
+    max-width: 95%;
     width: 500px;
 
 }
 
 .contactsBlock {
     margin: auto;
+    margin-right: 15px;
 }
 
 .list {
@@ -121,7 +122,7 @@
 }
 
 .contactsBlock__link {
-    font-size: 18px;
+    font-size: 15px;
     color: black;
 }
 
