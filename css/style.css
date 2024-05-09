@@ -90,9 +90,8 @@
     min-height: 50px;
     font-size: 30px;
     padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center
+    padding-top: 2px;
+    text-align: center;
 }
 
 .footer {

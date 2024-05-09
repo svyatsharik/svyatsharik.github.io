@@ -1,5 +1,6 @@
 function countdown() {
-    const timeinterval = setInterval(function () {
+
+    function update() {
         const total = Date.parse('August 31 2027 23:59:59 GMT+03:00') - Date.parse(new Date());
         const timeLeft = {
             'days': Math.floor(total / (1000 * 60 * 60 * 24)),
@@ -7,12 +8,19 @@ function countdown() {
             'minutes': Math.floor((total / 1000 / 60) % 60),
             'seconds': Math.floor((total / 1000) % 60)
         };
-        document.getElementById('clock').innerHTML = '<h3>До получения диплома Физтеха осталось:</h3>Дней: ' + timeLeft.days +
-            '<br />Часов: '+ timeLeft.hours +
-            '<br />Минут: ' + timeLeft.minutes +
-            '<br />Секунд: ' + timeLeft.seconds;
+        daysSpan.innerHTML = timeLeft.days;
+        hoursSpan.innerHTML = timeLeft.hours;
+        minutesSpan.innerHTML = timeLeft.minutes;
+        secondsSpan.innerHTML = timeLeft.seconds;
         if (total <= 0) clearInterval(timeinterval);
-    }, 1000);
+    }
+
+    const daysSpan = document.getElementById('clock').querySelector('.days');  
+    const hoursSpan = document.getElementById('clock').querySelector('.hours');  
+    const minutesSpan = document.getElementById('clock').querySelector('.minutes');  
+    const secondsSpan = document.getElementById('clock').querySelector('.seconds');
+    update();
+    const timeinterval = setInterval(update, 1000);
 }
 
 countdown();
