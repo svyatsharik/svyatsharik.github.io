@@ -44,6 +44,27 @@
     font-weight: normal;
 }
 
+.menu {
+    background-color: rgb(162, 205, 175);
+    display: flex;
+    justify-content: center;
+    min-height: 75px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.menu__link {
+    margin-right: 150px;
+    font-size: 18px;
+    text-decoration: underline;
+    color: #10191E;
+}
+
+.link2 {
+    margin-right: 0px;
+}
+
 .content__main_text {
     font-size: 20px;
 }
@@ -180,6 +201,14 @@
 
 
 @media all and (max-width: 850px) {
+    .menu__link {
+        margin-right: 80px;
+    }
+    
+    .link2 {
+        margin-right: 0px;
+    }
+    
     .content__main {
         flex-direction: column-reverse;
         justify-content: flex-end;

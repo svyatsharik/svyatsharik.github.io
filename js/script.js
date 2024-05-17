@@ -30,7 +30,7 @@ function popap() {
     setTimeout(() => {
         popap.style.display = 'block';
         blackout.style.display = 'block';
-    }, 5000);
+    }, 30000);
     
     button.addEventListener('click', function () {
         if (popap.style.display === 'block') {
