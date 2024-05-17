@@ -23,4 +23,22 @@ function countdown() {
     const timeinterval = setInterval(update, 1000);
 }
 
+function popap() {
+    const popap = document.querySelector('.popap');
+    const button = popap.querySelector('.button');
+    const blackout = document.querySelector('.blackout');
+    setTimeout(() => {
+        popap.style.display = 'block';
+        blackout.style.display = 'block';
+    }, 5000);
+    
+    button.addEventListener('click', function () {
+        if (popap.style.display === 'block') {
+            popap.style.display = 'none';
+            blackout.style.display = 'none';
+        }
+    });
+}
+
+popap();
 countdown();

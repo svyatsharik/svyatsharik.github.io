@@ -147,6 +147,37 @@
     background-image: url(../img/Email.png);
 }
 
+.popap {
+    position: fixed;
+    height: 150px;
+    width: 400px;
+    background-color: rgb(162, 205, 175);
+    outline: #FFE082 solid 2px;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 50px;
+    z-index: 2;
+    display: none;
+}
+
+.button {
+    background-color: rgb(162, 205, 175);
+}
+
+.blackout {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
 
 @media all and (max-width: 850px) {
     .content__main {
@@ -177,5 +208,15 @@
     .content__clock {
         font-size: 20px;
         padding-bottom: 30px;
+    }
+
+    .popap {
+        height: 100px;
+        width: 200px;
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+        font-size: 18px;
+        padding-top: 15px;
+        padding: 15px 5px 10px;
     }
 }
