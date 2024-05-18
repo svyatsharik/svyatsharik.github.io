@@ -29,8 +29,12 @@ function popap() {
     const blackout = document.querySelector('.blackout');
     const feedbackButton = document.querySelector('.feedback-button');
     setTimeout(() => {
-        popap.style.display = 'block';
-        blackout.style.display = 'block';
+        if (document.cookie == '') {
+            popap.style.display = 'block';
+            blackout.style.display = 'block';
+            document.cookie = 'Попап открыт';
+        }
+        
     }, 5000);
     
     button.addEventListener('click', function () {
