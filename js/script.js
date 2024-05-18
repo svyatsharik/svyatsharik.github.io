@@ -127,39 +127,42 @@ function formValidation() {
       enableValidation();
 }
 
+function formActions() {
+  const form = document.querySelector('.form');
+  const button = document.querySelector('.feedback-button');
+  const blackout = document.querySelector('.blackout');
+  const closeButton = document.querySelector('.form__button[type="button"]');
+  const submitButton = document.querySelector('.form__button[type="submit"]');
+  button.addEventListener('click', function () {
+      form.style.zIndex = 2;
+      form.style.opacity = 1;
+      blackout.style.display = 'block';
+  });
+  closeButton.addEventListener('click', function () {
+      form.style.zIndex = -1;
+      form.style.opacity = 0;
+      blackout.style.display = 'none';
+  });
+  submitButton.addEventListener('click', function () {
+      fetch('/form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              name: document.querySelector('.form__item_el_name').value,
+              email: document.querySelector('.form__item_el_email').value,
+              tel: document.querySelector('.form__item_el_tel').value,
+              mainText: document.querySelector('.form__item_el_main-text').value
+          })
+      });
+      location.reload();
+  });
+}
+
 popap();
 countdown();
 fixMenu();
 formValidation();
-
-const form = document.querySelector('.form');
-const button = document.querySelector('.feedback-button');
-const blackout = document.querySelector('.blackout');
-const closeButton = document.querySelector('.form__button[type="button"]');
-const submitButton = document.querySelector('.form__button[type="submit"]');
-button.addEventListener('click', function () {
-    form.style.zIndex = 2;
-    form.style.opacity = 1;
-    blackout.style.display = 'block';
-});
-closeButton.addEventListener('click', function () {
-    form.style.zIndex = -1;
-    form.style.opacity = 0;
-    blackout.style.display = 'none';
-});
-submitButton.addEventListener('click', function () {
-    fetch('/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: document.querySelector('.form__item_el_name').value,
-            email: document.querySelector('.form__item_el_email').value,
-            tel: document.querySelector('.form__item_el_tel').value,
-            mainText: document.querySelector('.form__item_el_main-text').value
-        })
-    });
-    location.reload();
-});
+formActions();
   
