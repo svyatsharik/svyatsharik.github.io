@@ -70,9 +70,67 @@ function fixMenu() {
     });
 }
 
+function formValidation() {
+    const showInputError = (formElement, inputElement, errorMessage) => {
+        const errorElement = formElement.querySelector(`.${inputElement.id}-input-error`);
+        errorElement.textContent = errorMessage;
+      };
+      
+      const hideInputError = (formElement, inputElement) => {
+        const errorElement = formElement.querySelector(`.${inputElement.id}-input-error`);
+        errorElement.textContent = '';
+      };
+      
+      const checkInputValidity = (formElement, inputElement) => {
+        if (!inputElement.validity.valid) {
+          showInputError(formElement, inputElement, inputElement.validationMessage);
+        } else {
+          hideInputError(formElement, inputElement);
+        }
+      };
+      
+      const setEventListeners = (formElement) => {
+        const inputList = Array.from(formElement.querySelectorAll('.form__item'));
+        const buttonElement = document.querySelector('.form__button[type="submit"]');
+        toggleButtonState(inputList, buttonElement);
+        inputList.forEach((inputElement) => {
+          inputElement.addEventListener('input', function () {
+            checkInputValidity(formElement, inputElement);
+            toggleButtonState(inputList, buttonElement);
+          });
+        });
+      };
+      
+      const enableValidation = () => {
+        const formElement = document.querySelector('.form');
+        formElement.addEventListener('submit', (evt) => {
+            evt.preventDefault();
+        });
+        setEventListeners(formElement);
+      };
+    
+      const hasInvalidInput = (inputList) => {
+        return inputList.some((inputElement) => {
+          return !inputElement.validity.valid;
+        })
+      };
+    
+      const toggleButtonState = (inputList, buttonElement) => {
+        
+        if (hasInvalidInput(inputList)) {
+          buttonElement.disabled = true;
+        } else {
+          buttonElement.disabled = false;
+        }
+      }; 
+    
+      enableValidation();
+}
+
 popap();
 countdown();
 fixMenu();
+formValidation();
 
 const form = document.querySelector('.form');
 const button = document.querySelector('.feedback-button');
@@ -94,3 +152,4 @@ submitButton.addEventListener('click', function () {
     form.style.opacity = 0;
     blackout.style.display = 'none';
 });
+  

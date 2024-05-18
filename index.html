@@ -86,14 +86,34 @@
     <form class="form" novalidate>
         <h2 class="form__heading">Задайте параметры</h2>
         <fieldset class="form__input-container form__input-container_ctrl_texts">
-            <label for="name" class="form__label">ФИО</label>
-            <input type="text" class="form__item form__item_el_name" id="name" name="name" placeholder="Иванов Иван Иванович" required>
-            <label for="email" class="form__label">E-mail</label>
-            <input type="email" class="form__item form__item_el_email" id="email" name="email" placeholder="hello@example.com">
-            <label for="tel" class="form__label">Телефон</label>
-            <input type="tel" class="form__item form__item_el_tel" id="tel" name="tel"  placeholder="+7 (800) 555-35-35" required>
+            <label for="name" class="form__label">
+                <span class="form__placeholder name-input-placeholder">
+                    ФИО
+                  </span>
+                <input type="text" class="form__item form__item_el_name" id="name" name="name" placeholder="Иванов Иван Иванович" required minlength="3">
+                <span class="form__input-error name-input-error" ></span>
+            </label>
+            
+
+            <label for="email" class="form__label">
+                <span class="form__placeholder email-input-placeholder">
+                    E-mail
+                  </span>
+                <input type="email" class="form__item form__item_el_email" id="email" name="email" placeholder="hello@example.com" required minlength="7">
+                <span class="form__input-error email-input-error" ></span>
+            </label>
+            
+
+            <label for="tel" class="form__label">
+                <span class="form__placeholder tel-input-placeholder">
+                    Телефон
+                  </span>
+                <input type="tel" class="form__item form__item_el_tel" id="tel" name="tel"  placeholder="+7(800)555-35-35" required minlength="8">
+                <span class="form__input-error tel-input-error" ></span>
+            </label>
+
             <label for="main-text" class="form__label">Что можно доработать на моём сайте?</label>
-            <textarea class="form__item form__item_el_main-text" id="main-text" name="main-text" placeholder="Напишите здесь свои идеи" required></textarea>
+            <textarea class="form__item form__item_el_main-text" id="main-text" name="main-text" placeholder="Напишите здесь свои идеи"></textarea>
         </fieldset>
         <fieldset class="form__handlers">
             <button type="button" class="form__button">Закрыть</button>
