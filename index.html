@@ -51,6 +51,7 @@
             Минут: <span class="minutes"></span><br>
             Секунд: <span class="seconds"></span>
         </div>
+        <button class="feedback-button" type="button">Нажмите, чтобы оставить обратную связь</button>
     </main>
 
     <footer class="footer centered-block">
@@ -78,10 +79,27 @@
         </div>
     </footer>
     <div class="popap">
-        <p>Спасибо, что посетили мой сайт!</p>
+        <p>Оставьте, пожалуйста, обратную связь в нижней части сайта</p>
         <button class="button" type="button">Закрыть</button>
     </div>
     <div class="blackout"></div>
+    <form class="form" novalidate>
+        <h2 class="form__heading">Задайте параметры</h2>
+        <fieldset class="form__input-container form__input-container_ctrl_texts">
+            <label for="name" class="form__label">ФИО</label>
+            <input type="text" class="form__item form__item_el_name" id="name" name="name" placeholder="Иванов Иван Иванович" required>
+            <label for="email" class="form__label">E-mail</label>
+            <input type="email" class="form__item form__item_el_email" id="email" name="email" placeholder="hello@example.com">
+            <label for="tel" class="form__label">Телефон</label>
+            <input type="tel" class="form__item form__item_el_tel" id="tel" name="tel"  placeholder="+7 (800) 555-35-35" required>
+            <label for="main-text" class="form__label">Что можно доработать на моём сайте?</label>
+            <textarea class="form__item form__item_el_main-text" id="main-text" name="main-text" placeholder="Напишите здесь свои идеи" required></textarea>
+        </fieldset>
+        <fieldset class="form__handlers">
+            <button type="button" class="form__button">Закрыть</button>
+            <button type="submit" class="form__button">Отправить</button>
+        </fieldset>
+    </form>
     <script src="./js/script.js"></script>
 </body>
 </html>

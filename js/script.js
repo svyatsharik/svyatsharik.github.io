@@ -27,15 +27,17 @@ function popap() {
     const popap = document.querySelector('.popap');
     const button = popap.querySelector('.button');
     const blackout = document.querySelector('.blackout');
+    const feedbackButton = document.querySelector('.feedback-button');
     setTimeout(() => {
         popap.style.display = 'block';
         blackout.style.display = 'block';
-    }, 30000);
+    }, 5000);
     
     button.addEventListener('click', function () {
         if (popap.style.display === 'block') {
             popap.style.display = 'none';
             blackout.style.display = 'none';
+            feedbackButton.style.display = 'block';
         }
     });
 }
@@ -46,7 +48,6 @@ function fixMenu() {
     const content = document.querySelector('.content');
     let k = 0;
     window.addEventListener('scroll', function() {
-        console.log(content.style);
         if (menu.getBoundingClientRect().y <= 0 && k === 0) {
             menu.style.position = 'fixed';
             menu.style.top = 0;
@@ -68,3 +69,21 @@ function fixMenu() {
 popap();
 countdown();
 fixMenu();
+
+const form = document.querySelector('.form');
+const button = document.querySelector('.feedback-button');
+const blackout = document.querySelector('.blackout');
+const closeButton = document.querySelector('.form__button[type="button"]');
+const submitButton = document.querySelector('.form__button[type="submit"]');
+button.addEventListener('click', function () {
+    form.style.display = 'inline-block';
+    blackout.style.display = 'block';
+});
+closeButton.addEventListener('click', function () {
+    form.style.display = 'none';
+    blackout.style.display = 'none';
+});
+submitButton.addEventListener('click', function () {
+    form.style.display = 'none';
+    blackout.style.display = 'none';
+});
