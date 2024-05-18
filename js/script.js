@@ -29,11 +29,11 @@ function popap() {
     const blackout = document.querySelector('.blackout');
     const feedbackButton = document.querySelector('.feedback-button');
     setTimeout(() => {
-        if (document.cookie == '') {
+        // if (document.cookie == '') {
             popap.style.display = 'block';
             blackout.style.display = 'block';
             document.cookie = 'Попап открыт';
-        }
+        // }
         
     }, 5000);
     
@@ -80,14 +80,17 @@ const blackout = document.querySelector('.blackout');
 const closeButton = document.querySelector('.form__button[type="button"]');
 const submitButton = document.querySelector('.form__button[type="submit"]');
 button.addEventListener('click', function () {
-    form.style.display = 'inline-block';
+    form.style.zIndex = 2;
+    form.style.opacity = 1;
     blackout.style.display = 'block';
 });
 closeButton.addEventListener('click', function () {
-    form.style.display = 'none';
+    form.style.zIndex = -1;
+    form.style.opacity = 0;
     blackout.style.display = 'none';
 });
 submitButton.addEventListener('click', function () {
-    form.style.display = 'none';
+    form.style.zIndex = -1;
+    form.style.opacity = 0;
     blackout.style.display = 'none';
 });
