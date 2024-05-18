@@ -215,6 +215,8 @@
 .form {
     position: fixed;
     min-height: 150px;
+    max-height: 90%;
+    overflow-y: auto;
     width: 400px;
     background-color: rgb(162, 205, 175);
     outline: #FFE082 solid 2px;
