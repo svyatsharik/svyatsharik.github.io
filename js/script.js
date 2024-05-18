@@ -148,8 +148,18 @@ closeButton.addEventListener('click', function () {
     blackout.style.display = 'none';
 });
 submitButton.addEventListener('click', function () {
-    form.style.zIndex = -1;
-    form.style.opacity = 0;
-    blackout.style.display = 'none';
+    fetch('/form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: document.querySelector('.form__item_el_name').value,
+            email: document.querySelector('.form__item_el_email').value,
+            tel: document.querySelector('.form__item_el_tel').value,
+            mainText: document.querySelector('.form__item_el_main-text').value
+        })
+    });
+    location.reload();
 });
   
