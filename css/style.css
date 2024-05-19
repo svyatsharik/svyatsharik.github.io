@@ -441,6 +441,11 @@
         height: 24px;
         width: 24px;
     }
+
+    .form {
+        height: 80%;
+        top: calc(30% - 100px);
+    }
 }
 
 @media all and ((max-width: 650px) or (max-height: 450px)) {
@@ -462,6 +467,11 @@
     .button-close {
         height: 18px;
         width: 18px;
+    }
+
+    .form {
+        height: 75%;
+        top: calc(35% - 100px);
     }
 }
 
