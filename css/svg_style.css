@@ -1,0 +1,10 @@
+body {
+ text-align: center;
+}
+
+svg {
+  max-width: 90vw; 
+  height: 100vh;
+  margin: 0 auto;
+  display: block;
+}

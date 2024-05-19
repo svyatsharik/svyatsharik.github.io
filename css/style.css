@@ -144,6 +144,12 @@
     margin-left: auto;
 }
 
+.svg-block {
+    border: none;
+    width: 100%;
+    height: 100px;
+}
+
 .footer {
     justify-content: center;
     background-color: rgb(162, 205, 175);

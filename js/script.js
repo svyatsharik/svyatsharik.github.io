@@ -28,20 +28,22 @@ function popap() {
     const button = popap.querySelector('.button');
     const blackout = document.querySelector('.blackout');
     const feedbackButton = document.querySelector('.content__feedback-button');
+    const frame = document.querySelector('.svg-block');
     setTimeout(() => {
-        // if (document.cookie == '') {
+        if (document.cookie == '') {
             popap.style.display = 'block';
             blackout.style.display = 'block';
             document.cookie = 'Попап открыт';
-        // }
+        }
         
-    }, 5000);
+    }, 30000);
     
     button.addEventListener('click', function () {
         if (popap.style.display === 'block') {
             popap.style.display = 'none';
             blackout.style.display = 'none';
             feedbackButton.style.display = 'block';
+            frame.style.display = 'none';
         }
     });
 }
