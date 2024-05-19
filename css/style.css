@@ -113,10 +113,11 @@
     padding-bottom: 50px;
     padding-top: 2px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.feedback-button {
-    margin-top: 30px;
+.content__feedback-button {
+    margin-bottom: 30px;
     background-color: rgb(162, 205, 175);
     margin-left: auto;
     margin-right: auto;
@@ -126,6 +127,21 @@
     text-decoration: underline;
     font-size: 15px;
     padding-left: 7px;
+}
+
+.content__picture-button {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.picture-button {
+    background-color: rgb(162, 205, 175);
+    width: 125px;
+    text-decoration: underline;
+}
+
+.button2 {
+    margin-left: auto;
 }
 
 .footer {
@@ -210,6 +226,59 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
+}
+
+.picture {
+    position: fixed;
+    z-index: 3;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+    display: none;
+    flex-flow: row wrap;
+}
+
+.picture-card {
+    height: 500px;
+    width: 500px;
+    background-image: url(../img/picture1.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.picture-card__button {
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    width: 50px;
+    align-self: center;
+}
+
+.button-left {
+    border: none;
+    background-image: none;
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+
+.button-right {
+    margin-left: auto;
+    border: none;
+    background-image: url(../img/right.svg);
+    background-size: 50px;
+    background-repeat: no-repeat;
+}
+
+.button-close {
+    margin-left: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(../img/Крестик.svg);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    border: none;
+    height: 30px;
+    width: 30px;
+
 }
 
 .form {

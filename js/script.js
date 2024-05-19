@@ -27,7 +27,7 @@ function popap() {
     const popap = document.querySelector('.popap');
     const button = popap.querySelector('.button');
     const blackout = document.querySelector('.blackout');
-    const feedbackButton = document.querySelector('.feedback-button');
+    const feedbackButton = document.querySelector('.content__feedback-button');
     setTimeout(() => {
         // if (document.cookie == '') {
             popap.style.display = 'block';
@@ -129,7 +129,7 @@ function formValidation() {
 
 function formActions() {
   const form = document.querySelector('.form');
-  const button = document.querySelector('.feedback-button');
+  const button = document.querySelector('.content__feedback-button');
   const blackout = document.querySelector('.blackout');
   const closeButton = document.querySelector('.form__button[type="button"]');
   const submitButton = document.querySelector('.form__button[type="submit"]');
@@ -160,9 +160,59 @@ function formActions() {
   });
 }
 
+function pictureActions() {
+  let i = 0;
+  const pictures = ["../img/picture1.jpg", "../img/picture2.jpg", "../img/picture3.jpg"];
+  const buttonLeft = document.querySelector('.button-left');
+  const buttonRight = document.querySelector('.button-right');
+  const buttonClose = document.querySelector('.button-close');
+  const buttonPicture1 = document.querySelector('.button1');
+  const buttonPicture2 = document.querySelector('.button2');
+  const blackout = document.querySelector('.blackout');
+  const pictureBlock = document.querySelector('.picture');
+  const popap1 = document.querySelector('.popap');
+  buttonLeft.addEventListener('click', function () {
+    if (i !== 0) {
+      i--;
+      document.querySelector('.picture-card').style.backgroundImage = "url(" + pictures[i] + ")";
+      buttonRight.style.backgroundImage = "url(../img/right.svg)";
+      if (i === 0) {
+        buttonLeft.style.backgroundImage = "none";
+      }
+    }
+  });
+  
+  buttonRight.addEventListener('click', function () {
+    if (i !== pictures.length - 1) {
+      i++;
+      document.querySelector('.picture-card').style.backgroundImage = "url(" + pictures[i] + ")";
+      buttonLeft.style.backgroundImage = "url(../img/left.svg)";
+      if (i === pictures.length - 1) {
+        buttonRight.style.backgroundImage = "none";
+      }
+    }
+  });
+  
+  buttonClose.addEventListener('click', function () {
+        pictureBlock.style.display = 'none';
+        if (popap1.style.display === 'none') {
+          blackout.style.display = 'none';
+        }
+  });
+  
+  function settings() {
+    pictureBlock.style.display = 'flex';
+    blackout.style.display = 'block';
+  }
+  
+  buttonPicture1.addEventListener('click', settings);
+  
+  buttonPicture2.addEventListener('click', settings);
+}
+
 popap();
 countdown();
 fixMenu();
 formValidation();
 formActions();
-  
+pictureActions();
