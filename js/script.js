@@ -197,7 +197,7 @@ function pictureActions() {
   
   buttonClose.addEventListener('click', function () {
         pictureBlock.style.display = 'none';
-        if (popap1.style.display === 'none') {
+        if (popap1.style.display !== 'block') {
           blackout.style.display = 'none';
         }
   });
