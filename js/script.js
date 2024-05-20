@@ -30,13 +30,13 @@ function popap() {
     const feedbackButton = document.querySelector('.content__feedback-button');
     const frame = document.querySelector('.svg-block');
     setTimeout(() => {
-        if (document.cookie == '') {
+        //if (document.cookie == '') {
             popap.style.display = 'block';
             blackout.style.display = 'block';
             document.cookie = 'Попап открыт';
-        }
+       // }
         
-    }, 30000);
+    }, 5000);
     
     button.addEventListener('click', function () {
         if (popap.style.display === 'block') {
@@ -135,6 +135,7 @@ function formActions() {
   const blackout = document.querySelector('.blackout');
   const closeButton = document.querySelector('.form__button[type="button"]');
   const submitButton = document.querySelector('.form__button[type="submit"]');
+  const closeBlock = document.querySelector('.close-block');
   button.addEventListener('click', function () {
       form.style.zIndex = 2;
       form.style.opacity = 1;
@@ -158,7 +159,15 @@ function formActions() {
               mainText: document.querySelector('.form__item_el_main-text').value
           })
       });
-      location.reload();
+      setTimeout(() => {
+        closeBlock.style.display = 'block';
+      }, 500)
+      setTimeout(() => {
+        closeBlock.style.display = 'none';
+        blackout.style.display = 'none';
+      }, 3000)
+      form.style.zIndex = -1;
+      form.style.opacity = 0;
   });
 }
 

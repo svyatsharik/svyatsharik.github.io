@@ -342,6 +342,22 @@
     background-color: rgb(162, 205, 175);
 }
 
+.close-block {
+    position: fixed;
+    min-height: 50px;
+    width: 300px;
+    background-color: rgb(162, 205, 175);
+    outline: #FFE082 solid 2px;
+    top: calc(50% - 25px);
+    left: calc(50% - 150px);
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+    padding: 25px 7px 0px;
+    z-index: 3;
+    display: none;
+}
+
 
 @media all and (max-width: 850px) {
     .menu {
