@@ -30,13 +30,13 @@ function popap() {
     const feedbackButton = document.querySelector('.content__feedback-button');
     const frame = document.querySelector('.svg-block');
     setTimeout(() => {
-        //if (document.cookie == '') {
+        if (document.cookie == '') {
             popap.style.display = 'block';
             blackout.style.display = 'block';
             document.cookie = 'Попап открыт';
-       // }
+        }
         
-    }, 5000);
+    }, 30000);
     
     button.addEventListener('click', function () {
         if (popap.style.display === 'block') {
